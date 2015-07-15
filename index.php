@@ -29,7 +29,7 @@ switch($type) {
                 'Description'=>'你看过盗墓笔记吗？你知道盗墓人士中分南派和北派吗？来测一下你是属于什么派的吧？',
                 'PicUrl'=>'http://cdn-cn.vonvon.net/vonvon-cn-real/editor/1436839209469-SArBr8o9DJoXcpLx.jpg',
                 'Url'=>'http://cn.vonvon.net/quiz/424'
-            ),
+            )
         );
         $weObj->news($newsData)->reply();
         break;
@@ -38,6 +38,7 @@ switch($type) {
         exit;
         break;
     case Wechat::MSGTYPE_EVENT:
+        $weObj->text(Wechat::MSGTYPE_EVENT)->reply();
         break;
     case Wechat::MSGTYPE_IMAGE:
         break;
