@@ -20,7 +20,7 @@ $token = $weObj->checkAuth();
 switch($type) {
     case Wechat::MSGTYPE_TEXT:
         $info = $weObj->getUserInfo($openid);
-        $weObj->text(var_dump($info))->reply();
+        $weObj->text("Your nickname is ".$info['nickname']."\nYour sex is ".$info['sex']."\nYour city is ".$info['city']."\nYour province is ".$info['province']."\n Your country is ".$info['country']."\nYour headimgurl is ".$info['headimgurl']."\nYour subscribe_time is ".$info['subscribe_time'])->reply();
         exit;
         break;
     case Wechat::MSGTYPE_EVENT:
