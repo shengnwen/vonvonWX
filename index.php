@@ -19,7 +19,8 @@ $openid = $weObj->getRev()->getRevFrom();
 $token = $weObj->checkAuth();
 switch($type) {
     case Wechat::MSGTYPE_TEXT:
-        $weObj->text("hello,I'm Aaron! Your openid is ".$openid." And access_token is ".$token)->reply();
+        $info = $weObj->getUserInfo($openid);
+        $weObj->text(var_dump($info))->reply();
         exit;
         break;
     case Wechat::MSGTYPE_EVENT:
@@ -126,4 +127,7 @@ $newmenu =  array(
             )
         )
 );
-$result = $weObj->createMenu($newmenu);
+$weObj->createMenu($newmenu);
+
+$result = $weObj->getOauthUserinfo($token,$openid);
+var_dump($result);
