@@ -11,5 +11,8 @@ $weObj = new Wechat($options);
 
 $data = $weObj->getOauthAccessToken();
 
-$result = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
-var_dump($result);
+$info = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
+
+echo "Your nickname is ".$info['nickname']."\nYour sex is ".$info['sex']."\nYour city is ".$info['city']."\nYour province is ".$info['province']."\n Your country is ".$info['country']."\nYour subscribe_time is ".date("Y-m-d H:i:s",$info['subscribe_time'])."\nNow is ".date("Y-m-d H:i:s",time());
+
+echo "<img src='".$info['headimgurl']."'>";
