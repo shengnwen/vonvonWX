@@ -10,7 +10,7 @@ $options = array(
 $weObj = new Wechat($options);
 
 $openid = $weObj->getRev()->getRevFrom();
-$token = $weObj->checkAuth();
+$token = $weObj->getOauthAccessToken();
 
 $result = $weObj->getOauthUserinfo($token,$openid);
 var_dump($result);
