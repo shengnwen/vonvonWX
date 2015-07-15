@@ -38,7 +38,7 @@ switch($type) {
         exit;
         break;
     case Wechat::MSGTYPE_EVENT:
-        $arr = $weObj->getRevEvent();
+        $arr = $weObj->getRev()->getRevEvent();
         $weObj->text($arr['event'].$arr['key'])->reply();
         break;
     case Wechat::MSGTYPE_IMAGE:
