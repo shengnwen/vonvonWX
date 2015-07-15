@@ -1,5 +1,5 @@
 <?php
-
+header("Content-Type: text/html; charset=UTF-8");
 include "wechat.class.php";
 $options = array(
     'token'=>'vonvon', //填写你设定的key
@@ -23,7 +23,7 @@ switch($info['sex']) {
     default:
         $info['sex'] = '未知';
 }
-$info['nickname'] = iconv('gb2312','utf8',$info['nickname']);
+$info['nickname'] = iconv('gbk2312','utf8',$info['nickname']);
 
 echo "Your nickname is ".$info['nickname']."<br />Your sex is ".$info['sex']."<br />Your city is ".$info['city']."<br />Your province is ".$info['province']."<br />Your country is ".$info['country']."<br />Now is ".date("Y-m-d H:i:s",time())."<br />";
 
