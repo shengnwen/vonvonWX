@@ -14,13 +14,16 @@ $options = array(
 );
 $weObj = new Wechat($options);
 $weObj->valid();//明文或兼容模式可以在接口验证通过后注释此句，但加密模式一定不能注释，否则会验证失败
-$type = $weObj->getRev()->getRevType();
+
 $openid = $weObj->getRev()->getRevFrom();
 $token = $weObj->checkAuth();
+
+$info = $weObj->getUserInfo($openid);
+
+$type = $weObj->getRev()->getRevType();
 switch($type) {
     case Wechat::MSGTYPE_TEXT:
-        $info = $weObj->getUserInfo($openid);
-        $weObj->text("Your nickname is ".$info['nickname']."\nYour sex is ".$info['sex']."\nYour city is ".$info['city']."\nYour province is ".$info['province']."\n Your country is ".$info['country']."\nYour headimgurl is ".$info['headimgurl']."\nYour subscribe_time is ".$info['subscribe_time'])->reply();
+        $weObj->text("Your nickname is ".$info['nickname']."\nYour sex is ".$info['sex']."\nYour city is ".$info['city']."\nYour province is ".$info['province']."\n Your country is ".$info['country']."\nYour headimgurl is ".$info['headimgurl']."\nYour subscribe_time is ".date("Y-m-d H:i:s",$info['subscribe_time']))->reply();
         exit;
         break;
     case Wechat::MSGTYPE_EVENT:
@@ -29,7 +32,7 @@ switch($type) {
             case 'subscribe':
                 $subscribe = array(
                     "0"=>array(
-                        'Title'=>'Welcome to Vonvon!',
+                        'Title'=>$info['nickname'].'Welcome to Vonvon!',
                         'Description'=>'Vonvon作为国际化的SNS社交媒体，从2015年1月起，在全世界已经拥有1亿以上的 用户。现在已在韩国，中国，台湾，泰国，越南，印尼，美国，巴西，西班牙等国家 开放。将来会拓展到更多的国家，并且会创作更多有趣的主题测试。',
                         'PicUrl'=>'http://cdn-cn-static-dr.vonvon.net/images/cn/recruit_main.jpg',
                         'Url'=>'http://cn.vonvon.net/'
@@ -128,6 +131,3 @@ $newmenu =  array(
         )
 );
 $weObj->createMenu($newmenu);
-
-$result = $weObj->getOauthUserinfo($token,$openid);
-var_dump($result);
