@@ -13,6 +13,18 @@ $data = $weObj->getOauthAccessToken();
 
 $info = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
 
+switch($info['sex']) {
+    case '1':
+        $info['sex'] = '男';
+        break;
+    case '2':
+        $info['sex'] = '女';
+        break;
+    default:
+        $info['sex'] = '未知';
+}
+$info['nickname'] = iconv('gb2312','utf8',$info['nickname']);
+
 echo "Your nickname is ".$info['nickname']."<br />Your sex is ".$info['sex']."<br />Your city is ".$info['city']."<br />Your province is ".$info['province']."<br />Your country is ".$info['country']."<br />Now is ".date("Y-m-d H:i:s",time())."<br />";
 
 echo "<img src='".$info['headimgurl']."'>";
