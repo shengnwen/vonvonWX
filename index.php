@@ -19,16 +19,16 @@ switch($type) {
     case Wechat::EVENT_SUBSCRIBE:
         $newsData = array(
             "0"=>array(
-                'Title'=>'',
-                'Description'=>'',
-                'PicUrl'=>'',
-                'Url'=>''
+                'Title'=>'Welcome to Vonvon!',
+                'Description'=>'Vonvon作为国际化的SNS社交媒体，从2015年1月起，在全世界已经拥有1亿以上的 用户。现在已在韩国，中国，台湾，泰国，越南，印尼，美国，巴西，西班牙等国家 开放。将来会拓展到更多的国家，并且会创作更多有趣的主题测试。',
+                'PicUrl'=>'http://cdn-cn-static-dr.vonvon.net/images/cn/recruit_main.jpg',
+                'Url'=>'http://cn.vonvon.net/'
             ),
             "1"=>array(
-                'Title'=>'',
-                'Description'=>'',
-                'PicUrl'=>'',
-                'Url'=>''
+                'Title'=>'盗墓笔记测试——你是南派还是北派',
+                'Description'=>'你看过盗墓笔记吗？你知道盗墓人士中分南派和北派吗？来测一下你是属于什么派的吧？',
+                'PicUrl'=>'http://cdn-cn.vonvon.net/vonvon-cn-real/editor/1436839209469-SArBr8o9DJoXcpLx.jpg',
+                'Url'=>'http://cn.vonvon.net/quiz/424'
             ),
         );
         $weObj->news($newsData)->reply();
@@ -54,22 +54,22 @@ $newmenu =  array(
                 'type'=>'click',
                 'name'=>'最新测试',
                 'sub_button'=>array(
-                    0=>array('type'=>'view','name'=>'','url'=>''),
-                    1=>array('type'=>'view','name'=>'','url'=>''),
-                    2=>array('type'=>'view','name'=>'','url'=>''),
-                    3=>array('type'=>'view','name'=>'','url'=>''),
-                    4=>array('type'=>'view','name'=>'','url'=>'')
+                    0=>array('type'=>'click','name'=>'【神制作】系列','key'=>'MENU_KEY_NEWS'),
+                    1=>array('type'=>'view','name'=>'盗墓笔记','url'=>'http://cn.vonvon.net/quiz/424'),
+                    2=>array('type'=>'view','name'=>'你的身体结构','url'=>'http://cn.vonvon.net/quiz/421'),
+                    3=>array('type'=>'view','name'=>'我的右脑有多聪明','url'=>'http://cn.vonvon.net/quiz/387'),
+                    4=>array('type'=>'view','name'=>'【门萨】IQ测试','url'=>'http://cn.vonvon.net/quiz/318')
                 )
             ),
             1=>array(
                 'type'=>'click',
                 'name'=>'人气测试',
                 'sub_button'=>array(
-                    0=>array('type'=>'view','name'=>'','url'=>''),
-                    1=>array('type'=>'view','name'=>'','url'=>''),
-                    2=>array('type'=>'view','name'=>'','url'=>''),
-                    3=>array('type'=>'view','name'=>'','url'=>''),
-                    4=>array('type'=>'view','name'=>'','url'=>'')
+                    0=>array('type'=>'view','name'=>'神在制作我的时候','url'=>'http://cn.vonvon.net/quiz/341'),
+                    1=>array('type'=>'view','name'=>'多久后我才脱单','url'=>'http://cn.vonvon.net/quiz/319'),
+                    2=>array('type'=>'view','name'=>'最适合我的别名','url'=>'http://cn.vonvon.net/quiz/361'),
+                    3=>array('type'=>'view','name'=>'我的相关关键字','url'=>'http://cn.vonvon.net/quiz/364'),
+                    4=>array('type'=>'view','name'=>'vonvon游戏','url'=>'http://cn.vonvon.net/quiz/394')
                 )
             ),
             2=>array(
