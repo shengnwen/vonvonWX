@@ -15,10 +15,11 @@ $options = array(
 $weObj = new Wechat($options);
 $weObj->valid();//明文或兼容模式可以在接口验证通过后注释此句，但加密模式一定不能注释，否则会验证失败
 $type = $weObj->getRev()->getRevType();
+$openid = $weObj->getRev()->getRevFrom();
+$token = $weObj->checkAuth();
 switch($type) {
     case Wechat::MSGTYPE_TEXT:
-        $openid = $weObj->getRev()->getRevFrom();
-        $weObj->text("hello,I'm Aaron! Your openid is".$openid)->reply();
+        $weObj->text("hello,I'm Aaron! Your openid is ".$openid." And access_token is ".$token)->reply();
         exit;
         break;
     case Wechat::MSGTYPE_EVENT:
