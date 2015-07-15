@@ -13,6 +13,6 @@ $data = $weObj->getOauthAccessToken();
 
 $info = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
 
-echo "Your nickname is ".$info['nickname']."\nYour sex is ".$info['sex']."\nYour city is ".$info['city']."\nYour province is ".$info['province']."\n Your country is ".$info['country']."\nYour subscribe_time is ".date("Y-m-d H:i:s",$info['subscribe_time'])."\nNow is ".date("Y-m-d H:i:s",time());
+echo "Your nickname is ".$info['nickname']."<br />Your sex is ".$info['sex']."<br />Your city is ".$info['city']."<br />Your province is ".$info['province']."<br />Your country is ".$info['country']."<br />Your subscribe_time is ".date("Y-m-d H:i:s",$info['subscribe_time'])."<br />Now is ".date("Y-m-d H:i:s",time());
 
 echo "<img src='".$info['headimgurl']."'>";
