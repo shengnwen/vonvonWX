@@ -38,7 +38,8 @@ switch($type) {
         exit;
         break;
     case Wechat::MSGTYPE_EVENT:
-        $weObj->text(Wechat::MSGTYPE_EVENT)->reply();
+        $arr = $weObj->getRevEvent();
+        $weObj->text($arr['event'].$arr['key'])->reply();
         break;
     case Wechat::MSGTYPE_IMAGE:
         break;
@@ -55,7 +56,7 @@ $newmenu =  array(
                 'type'=>'click',
                 'name'=>'最新测试',
                 'sub_button'=>array(
-                    0=>array('type'=>'click','name'=>'【神制作】系列','key'=>'MENU_KEY_NEWS'),
+                    0=>array('type'=>'click','name'=>'【神制作】系列','key'=>'shen'),
                     1=>array('type'=>'view','name'=>'盗墓笔记','url'=>'http://cn.vonvon.net/quiz/424'),
                     2=>array('type'=>'view','name'=>'你的身体结构','url'=>'http://cn.vonvon.net/quiz/421'),
                     3=>array('type'=>'view','name'=>'我的右脑有多聪明','url'=>'http://cn.vonvon.net/quiz/387'),
