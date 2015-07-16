@@ -300,8 +300,8 @@ $signPackage = $jssdk->GetSignPackage();
 
         });
 
-        var last_voice_localId = "";
-        var voice_record_time = ;
+        var last_voice_localId = voiceId;
+        var voice_record_time = sec;
         function downloadVoice(serverId) {
             wx.downloadVoice({
                 serverId: serverId, // 需要下载的音频的服务器端ID，由uploadVoice接口获得
