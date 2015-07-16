@@ -326,10 +326,10 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.onMenuShareAppMessage({
-            title: wxShareDataArray[0],
+            title: "<?php echo $info['nickname'];?>" + "录制了" + wxShareDataArray[2] +"秒" + "朋友圈语音,你也来试试!",
             desc: wxShareDataArray[2],
             link: "http://139.129.117.49/vonvonWX/play.php?Record=" + wxShareDataArray[3] + "&s=" + wxShareDataArray[2].replace("\"", ""),
-            imgUrl: wxShareDataArray[1],
+            imgUrl: "<?php echo $info['headimgurl'];?>",
             //type: '', // 分享类型,music、video或link，不填默认为link
             //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
             success: function () {
