@@ -31,8 +31,8 @@ $signPackage = $jssdk->GetSignPackage();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>VonVon录音小游戏</title><meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0" />
-<meta charset="utf8">
+<head><title>VonVon录音</title><meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta charset="gb2312">
     <style type="text/css">
         body {
             background-color:#333;
@@ -300,10 +300,10 @@ $signPackage = $jssdk->GetSignPackage();
         signature: '<?php echo $signPackage["signature"];?>',
         jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "stopVoice", "onVoicePlayEnd", "uploadVoice", "downloadVoice"]
     });
-	wx.ready(function () {
-           changeWeixinShareData();
+    wx.ready(function () {
+        changeWeixinShareData();
     });
-           wx.error(function (res) {
+    wx.error(function (res) {
 
     });
 
@@ -312,7 +312,7 @@ $signPackage = $jssdk->GetSignPackage();
     function changeWeixinShareData() {
 
         wx.onMenuShareTimeline({
-            title: "<?php echo $info['nickname'];?>" + "对你说了" + wxShareDataArray[2] +"秒" + ",快来听听吧!",
+            title: "<?php echo $info['nickname'];?>对你说了" + wxShareDataArray[2] +"秒" + "快来听听吧!",
             link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fplay.php%3FRecord%3d" + wxShareDataArray[3] + "%26s%3d" + wxShareDataArray[2].replace("\"", "") + "&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
             imgUrl: "<?php echo $info['headimgurl'];?>",
             success: function () {
@@ -326,9 +326,9 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.onMenuShareAppMessage({
-            title: "<?php echo $info['nickname'];?>" + "对你说了" + wxShareDataArray[2] +"秒" + "快来听听吧!",
+            title: "<?php echo $info['nickname'];?>对你说了" + wxShareDataArray[2] +"秒" + "快来听听吧!",
             desc: wxShareDataArray[2],
-            link: "http://139.129.117.49/vonvonWX/play.php?Record=" + wxShareDataArray[3] + "&s=" + wxShareDataArray[2].replace("\"", ""),
+            link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fplay.php%3FRecord%3d" + wxShareDataArray[3] + "%26s%3d" + wxShareDataArray[2].replace("\"", "") + "&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
             imgUrl: "<?php echo $info['headimgurl'];?>",
             //type: '', // 分享类型,music、video或link，不填默认为link
             //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
