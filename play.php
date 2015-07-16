@@ -254,22 +254,22 @@ $signPackage = $jssdk->GetSignPackage();
                     }
                 });
 
-                wx.onMenuShareAppMessage({
-                    title: "播放语音",
-                    desc: "秒",
-                    link: "http://139.129.117.49/vonvonWX/play.php?Record="+voiceId+"&s="+sec,
-                    imgUrl: "http://139.129.117.49/vonvonWX/img/yy.jpg",
-                    //type: '', // 分享类型,music、video或link，不填默认为link
-                    //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                    success: function () {
-                        // 用户确认分享后执行的回调函数
-
-                    },
-                    cancel: function () {
-                        // 用户取消分享后执行的回调函数
-
-                    }
-                });
+//                wx.onMenuShareAppMessage({
+//                    title: "播放语音",
+//                    desc: "秒",
+//                    link: "http://139.129.117.49/vonvonWX/play.php?Record="+voiceId+"&s="+sec,
+//                    imgUrl: "http://139.129.117.49/vonvonWX/img/yy.jpg",
+//                    //type: '', // 分享类型,music、video或link，不填默认为link
+//                    //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+//                    success: function () {
+//                        // 用户确认分享后执行的回调函数
+//
+//                    },
+//                    cancel: function () {
+//                        // 用户取消分享后执行的回调函数
+//
+//                    }
+//                });
             });
             wx.error(function (res) {
 
@@ -333,10 +333,9 @@ function playVoiceByUser() {
 <div class="btn">
 
     <a class="green"
-       href="http://www.pxegt.com/yuyin3/ly.php">我也要发语音</a>
+       href="http://139.129.117.49/vonvonWX/ly.php">我也要发语音</a>
 
     <div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
 </div>
 </body>
 </html>
-
