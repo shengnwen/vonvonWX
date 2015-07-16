@@ -267,7 +267,7 @@ $signPackage = $jssdk->GetSignPackage();
             downloadVoice(voiceId);
             wx.onMenuShareTimeline({
                 title: "<?php echo $info['nickname'];?>" + "录制了" + sec +"秒" + "朋友圈语音,你也来试试!",
-                link: "http://139.129.117.49/vonvonWX/play.php?Record="+voiceId+"&s="+sec,
+                link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fplay.php%3FRecord%3d"+voiceId+"%26s%3d"+sec+"&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
                 imgUrl: "<?php echo $info['headimgurl'];?>",
                 success: function () {
                     // 用户确认分享后执行的回调函数
@@ -282,7 +282,7 @@ $signPackage = $jssdk->GetSignPackage();
             wx.onMenuShareAppMessage({
                 title: "<?php echo $info['nickname'];?>" + "播放语音",
                 desc: "秒",
-                link: "http://139.129.117.49/vonvonWX/play.php?Record="+voiceId+"&s="+sec,
+                link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fplay.php%3FRecord%3d"+voiceId+"%26s%3d"+sec+"&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
                 imgUrl: "http://139.129.117.49/vonvonWX/img/yy.jpg",
                 //type: '', // 分享类型,music、video或link，不填默认为link
                 //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
@@ -354,7 +354,7 @@ $signPackage = $jssdk->GetSignPackage();
             src="img/play.png"></a>
     <img src="img/play.gif" class="playgif" id="img_recording">
 </div>
-<div class="tips" id="div_tips">s</div>
+<div class="tips" id="div_tips"><?php echo $_GET['s'];?>s</div>
 <div class="btn">
 
     <a class="green"
