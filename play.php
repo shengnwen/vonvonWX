@@ -1,4 +1,8 @@
-
+<?php
+require_once "js/jssdk.php";
+$jssdk = new JSSDK("wx519f23f4a45e8c37", "ea8f0b17b3a0882bf5fda7ed27758482");
+$signPackage = $jssdk->GetSignPackage();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -331,7 +335,7 @@ function playVoiceByUser() {
     <a class="green"
        href="http://www.pxegt.com/yuyin3/ly.php">我也要发语音</a>
 
-    <div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,我们是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
+    <div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
 </div>
 </body>
 </html>
