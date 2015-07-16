@@ -26,7 +26,7 @@ switch($info['sex']) {
 //$info['nickname'] = iconv('gbk2312','utf8',$info['nickname']);
 
 require_once "js/jssdk.php";
-$jssdk = new JSSDK("yourAppID", "yourAppSecret");
+$jssdk = new JSSDK("wx519f23f4a45e8c37", "ea8f0b17b3a0882bf5fda7ed27758482");
 $signPackage = $jssdk->GetSignPackage();
 ?>
 <!DOCTYPE html>
