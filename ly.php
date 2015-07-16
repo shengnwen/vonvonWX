@@ -9,7 +9,7 @@ $options = array(
 );
 $weObj = new Wechat($options);
 
-$data = $weObj->getOauthAccessToken();
+$data = $weObj->getOauthRefreshToken();
 
 $info = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
 
@@ -32,7 +32,7 @@ $signPackage = $jssdk->GetSignPackage();
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><title>VonVon录音</title><meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0" />
-    <meta charset="gb2312">
+    <meta charset="utf8">
     <style type="text/css">
         body {
             background-color:#333;
