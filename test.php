@@ -694,10 +694,10 @@ $signPackage = $jssdk->GetSignPackage();
         };
 
         var shareData = {
-            title: <?php echo $info['nickname'];?>,
+            title: "<?php echo $info['nickname'];?>",
             desc: 'Aaron demo of JS',
             link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
-            imgUrl: <?php echo $info['headimgurl'];?>
+            imgUrl: "<?php echo $info['headimgurl'];?>"
         };
         wx.onMenuShareAppMessage(shareData);
         wx.onMenuShareTimeline(shareData);
