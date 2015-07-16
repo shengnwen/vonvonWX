@@ -268,7 +268,7 @@ $signPackage = $jssdk->GetSignPackage();
             wx.onMenuShareTimeline({
                 title: "<?php echo $info['nickname'];?>" + "录制了" + sec +"秒" + "朋友圈语音,你也来试试!",
                 link: "http://139.129.117.49/vonvonWX/play.php?Record="+voiceId+"&s="+sec,
-                imgUrl: "<?php echo $info['nickname'];?>",
+                imgUrl: "<?php echo $info['headimgurl'];?>",
                 success: function () {
                     // 用户确认分享后执行的回调函数
 

@@ -314,7 +314,7 @@ $signPackage = $jssdk->GetSignPackage();
         wx.onMenuShareTimeline({
             title: "<?php echo $info['nickname'];?>" + "录制了" + wxShareDataArray[2] +"秒" + "朋友圈语音,你也来试试!",
             link: "http://139.129.117.49/vonvonWX/play.php?Record=" + wxShareDataArray[3] + "&s=" + wxShareDataArray[2].replace("\"", ""),
-            imgUrl: "<?php echo $info['nickname'];?>",
+            imgUrl: "<?php echo $info['headimgurl'];?>",
             success: function () {
                 // 用户确认分享后执行的回调函数
                 showAfterShareGuide();
@@ -347,7 +347,7 @@ $signPackage = $jssdk->GetSignPackage();
 <div class="page-container">
     <div class="title">录制语音</div>
     <div class="icon">
-        <img src="<?php echo $info['headimgur'];?>" class="mouth" id = "img_mouth">
+        <img src="<?php echo $info['headimgurl'];?>" class="mouth" id = "img_mouth">
         <a class="play" href="javascript:playRecord()" id = "img_play" style="display:none"><img src="img/play.png"></a>
         <img src="img/play.gif" class="playgif" id="img_recording" style="display:none">
     </div>
