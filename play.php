@@ -9,7 +9,7 @@ $signPackage = $jssdk->GetSignPackage();
 <head>
 <title>播放语音</title>
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0"/>
-<meta charset="gb2312">
+<meta charset="utf8">
 <style type="text/css">
     body {
         background-color: #333;
