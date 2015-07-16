@@ -30,7 +30,7 @@ $jssdk = new JSSDK("wx519f23f4a45e8c37", "ea8f0b17b3a0882bf5fda7ed27758482");
 $signPackage = $jssdk->GetSignPackage();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <title>Aaron's Demo</title>
@@ -220,10 +220,10 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareAppMessage').onclick = function () {
             wx.onMenuShareAppMessage({
-                title: <?php echo $info['nickname'];?>,
+                title: "<?php echo $info['nickname'];?>",
                 desc: 'Aaron demo of JS',
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
-                imgUrl: <?php echo $info['headimgurl'];?>
+                imgUrl: "<?php echo $info['headimgurl'];?>",
                 trigger: function (res) {
                     // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
                     alert('用户点击发送给朋友');
@@ -244,9 +244,9 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareTimeline').onclick = function () {
             wx.onMenuShareTimeline({
-                title: <?php echo $info['nickname'];?>,
+                title: "<?php echo $info['nickname'];?>",
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
-                imgUrl: <?php echo $info['headimgurl'];?>
+                imgUrl: "<?php echo $info['headimgurl'];?>",
                 trigger: function (res) {
                     // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
                     alert('用户点击分享到朋友圈');
@@ -267,10 +267,10 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareQQ').onclick = function () {
             wx.onMenuShareQQ({
-                title: <?php echo $info['nickname'];?>,
+                title: "<?php echo $info['nickname'];?>",
                 desc: 'Aaron demo of JS',
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
-                imgUrl: <?php echo $info['headimgurl'];?>
+                imgUrl: "<?php echo $info['headimgurl'];?>",
                 trigger: function (res) {
                     alert('用户点击分享到QQ');
                 },
@@ -293,10 +293,10 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.4 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareWeibo').onclick = function () {
             wx.onMenuShareWeibo({
-                title: <?php echo $info['nickname'];?>,
+                title: "<?php echo $info['nickname'];?>",
                 desc: 'Aaron demo of JS',
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
-                imgUrl: <?php echo $info['headimgurl'];?>
+                imgUrl: "<?php echo $info['headimgurl'];?>",
                 trigger: function (res) {
                     alert('用户点击分享到微博');
                 },
