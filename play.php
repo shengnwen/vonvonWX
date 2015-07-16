@@ -10,9 +10,9 @@ $options = array(
 $weObj = new Wechat($options);
 
 $data = $weObj->getOauthAccessToken();
-$weObj->getOauthRefreshToken($data['refresh_token']);
+$new = $weObj->getOauthRefreshToken($data['refresh_token']);
 
-$info = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
+$info = $weObj->getOauthUserinfo($new['access_token'],$data['openid']);
 
 switch($info['sex']) {
     case '1':
