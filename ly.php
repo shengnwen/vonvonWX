@@ -313,7 +313,7 @@ $signPackage = $jssdk->GetSignPackage();
 
         wx.onMenuShareTimeline({
             title: "<?php echo $info['nickname'];?>" + "对你说了" + wxShareDataArray[2] +"秒" + ",快来听听吧!",
-            link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fplay.php%3FRecord%3d"+wxShareDataArray[3]+"%26s%3d"+wxShareDataArray[2].replace("\"", "")+"&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
+            link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fplay.php%3FRecord%3d" + wxShareDataArray[3] + "%26s%3d" + wxShareDataArray[2].replace("\"", "") + "&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
             imgUrl: "<?php echo $info['headimgurl'];?>",
             success: function () {
                 // 用户确认分享后执行的回调函数
