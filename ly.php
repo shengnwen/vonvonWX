@@ -1,4 +1,29 @@
 <?php
+header("Content-Type: text/html; charset=UTF-8");
+include "wechat.class.php";
+$options = array(
+    'token'=>'vonvon', //填写你设定的key
+    'encodingaeskey'=>'encodingaeskey', //填写加密用的EncodingAESKey，如接口为明文模式可忽略
+    'appid'=>'wx519f23f4a45e8c37',//填写高级调用功能的appid
+    'appsecret'=>'ea8f0b17b3a0882bf5fda7ed27758482' //填写高级调用功能的密钥
+);
+$weObj = new Wechat($options);
+
+$data = $weObj->getOauthAccessToken();
+
+$info = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
+
+switch($info['sex']) {
+    case '1':
+        $info['sex'] = '男';
+        break;
+    case '2':
+        $info['sex'] = '女';
+        break;
+    default:
+        $info['sex'] = '未知';
+}
+
 require_once "js/jssdk.php";
 $jssdk = new JSSDK("wx519f23f4a45e8c37", "ea8f0b17b3a0882bf5fda7ed27758482");
 $signPackage = $jssdk->GetSignPackage();
@@ -287,9 +312,9 @@ $signPackage = $jssdk->GetSignPackage();
     function changeWeixinShareData() {
 
         wx.onMenuShareTimeline({
-            title: "VonVon录制了" + wxShareDataArray[2] +"秒" + "朋友圈语音,你也来试试!",
+            title: "<?php echo $info['nickname'];?>" + "录制了" + wxShareDataArray[2] +"秒" + "朋友圈语音,你也来试试!",
             link: "http://139.129.117.49/vonvonWX/play.php?Record=" + wxShareDataArray[3] + "&s=" + wxShareDataArray[2].replace("\"", ""),
-            imgUrl: wxShareDataArray[1],
+            imgUrl: "<?php echo $info['nickname'];?>",
             success: function () {
                 // 用户确认分享后执行的回调函数
                 showAfterShareGuide();
@@ -300,29 +325,29 @@ $signPackage = $jssdk->GetSignPackage();
             }
         });
 
-//        wx.onMenuShareAppMessage({
-//            title: wxShareDataArray[0],
-//            desc: wxShareDataArray[2],
-//            link: "http://139.129.117.49/vonvonWX/play.php?Record=" + wxShareDataArray[3] + "&s=" + wxShareDataArray[2].replace("\"", ""),
-//            imgUrl: wxShareDataArray[1],
-//            //type: '', // 分享类型,music、video或link，不填默认为link
-//            //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-//            success: function () {
-//                // 用户确认分享后执行的回调函数
-//                showAfterShareGuide();
-//            },
-//            cancel: function () {
-//                // 用户取消分享后执行的回调函数
-//                showAfterShareGuide();
-//            }
-//        });
+        wx.onMenuShareAppMessage({
+            title: wxShareDataArray[0],
+            desc: wxShareDataArray[2],
+            link: "http://139.129.117.49/vonvonWX/play.php?Record=" + wxShareDataArray[3] + "&s=" + wxShareDataArray[2].replace("\"", ""),
+            imgUrl: wxShareDataArray[1],
+            //type: '', // 分享类型,music、video或link，不填默认为link
+            //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                showAfterShareGuide();
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+                showAfterShareGuide();
+            }
+        });
     }
 
 </script>
 <div class="page-container">
     <div class="title">录制语音</div>
     <div class="icon">
-        <img src="img/mouth.png" class="mouth" id = "img_mouth">
+        <img src="<?php echo $info['headimgur'];?>" class="mouth" id = "img_mouth">
         <a class="play" href="javascript:playRecord()" id = "img_play" style="display:none"><img src="img/play.png"></a>
         <img src="img/play.gif" class="playgif" id="img_recording" style="display:none">
     </div>
@@ -338,7 +363,7 @@ $signPackage = $jssdk->GetSignPackage();
     <img src="img/share.png" class="share" >
 
 </div>
-<div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
+<div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,我们是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
 <input type=text id="txt_serverID" style="display:none" />
 </body>
 </html>

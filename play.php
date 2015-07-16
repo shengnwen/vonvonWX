@@ -1,4 +1,29 @@
 <?php
+header("Content-Type: text/html; charset=UTF-8");
+include "wechat.class.php";
+$options = array(
+    'token'=>'vonvon', //填写你设定的key
+    'encodingaeskey'=>'encodingaeskey', //填写加密用的EncodingAESKey，如接口为明文模式可忽略
+    'appid'=>'wx519f23f4a45e8c37',//填写高级调用功能的appid
+    'appsecret'=>'ea8f0b17b3a0882bf5fda7ed27758482' //填写高级调用功能的密钥
+);
+$weObj = new Wechat($options);
+
+$data = $weObj->getOauthAccessToken();
+
+$info = $weObj->getOauthUserinfo($data['access_token'],$data['openid']);
+
+switch($info['sex']) {
+    case '1':
+        $info['sex'] = '男';
+        break;
+    case '2':
+        $info['sex'] = '女';
+        break;
+    default:
+        $info['sex'] = '未知';
+}
+
 require_once "js/jssdk.php";
 $jssdk = new JSSDK("wx519f23f4a45e8c37", "ea8f0b17b3a0882bf5fda7ed27758482");
 $signPackage = $jssdk->GetSignPackage();
@@ -241,9 +266,9 @@ $signPackage = $jssdk->GetSignPackage();
         wx.ready(function (res) {
             downloadVoice(voiceId);
             wx.onMenuShareTimeline({
-                title: "VonVon录制了" + sec +"秒" + "朋友圈语音,你也来试试!",
+                title: "<?php echo $info['nickname'];?>" + "录制了" + sec +"秒" + "朋友圈语音,你也来试试!",
                 link: "http://139.129.117.49/vonvonWX/play.php?Record="+voiceId+"&s="+sec,
-                imgUrl: "http://139.129.117.49/vonvonWX/img/yy.jpg",
+                imgUrl: "<?php echo $info['nickname'];?>",
                 success: function () {
                     // 用户确认分享后执行的回调函数
 
