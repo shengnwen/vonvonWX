@@ -40,6 +40,7 @@ $signPackage = $jssdk->GetSignPackage();
 echo "Your nickname is ".$info['nickname']."<br />Your sex is ".$info['sex']."<br />Your city is ".$info['city']."<br />Your province is ".$info['province']."<br />Your country is ".$info['country']."<br />Now is ".date("Y-m-d H:i:s",time())."<br />";
 
 echo "<img src='".$info['headimgurl']."'>";
+echo "<button id='onMenuShareTimeline'>分享朋友圈</button>";
 ?>
 </body>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -57,19 +58,22 @@ echo "<img src='".$info['headimgurl']."'>";
     });
     wx.ready(function () {
         // 在这里调用 API
-        wx.onMenuShareTimeline({
-            title: <?php echo $info['nickname'].', come on!';?>, // 分享标题
-            link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect', // 分享链接
-            imgUrl: <?php echo $info['headimgurl'];?>, // 分享图标
-            success: function () {
-                // 用户确认分享后执行的回调函数
-                alert('已分享');
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-                alert('已取消');
-            }
-        });
+        document.querySelector('#onMenuShareTimeline').onclick = function () {
+            wx.onMenuShareTimeline({
+                title: <?php echo $info['nickname'].', come on!';?>, // 分享标题
+                link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect', // 分享链接
+                imgUrl: <?php echo $info['headimgurl'];?>, // 分享图标
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                    alert('已分享');
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                    alert('已取消');
+                }
+            });
+            alert('已注册获取“分享到朋友圈”状态事件');
+        };
     });
 </script>
 </html>
