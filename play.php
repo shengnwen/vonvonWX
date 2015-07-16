@@ -32,7 +32,7 @@ $signPackage = $jssdk->GetSignPackage();
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>播放语音</title>
+    <title>VonVon录音小游戏</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0"/>
     <meta charset="utf8">
     <style type="text/css">

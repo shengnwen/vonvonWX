@@ -31,7 +31,7 @@ $signPackage = $jssdk->GetSignPackage();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>录制语音</title><meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0" />
+<head><title>VonVon录音小游戏</title><meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=0" />
 <meta charset="utf8">
     <style type="text/css">
         body {
@@ -290,7 +290,7 @@ $signPackage = $jssdk->GetSignPackage();
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-    var wxShareDataArray = ["朋友圈也能发语音了！", "http://139.129.117.49/vonvonWX/img/yy.jpg", "10\"", ""];
+    var wxShareDataArray = ["朋友圈也能发语音了！", "http://139.129.117.49/vonvonWX/img/yy.jpg", "0\"", ""];
 
     wx.config({
         debug: false,
