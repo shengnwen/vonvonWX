@@ -354,7 +354,7 @@ $signPackage = $jssdk->GetSignPackage();
             src="img/play.png"></a>
     <img src="img/play.gif" class="playgif" id="img_recording">
 </div>
-<div class="tips" id="div_tips"><?php echo $_GET['s'];?>s</div>
+<div class="tips" id="div_tips">s</div>
 <div class="btn">
 
     <a class="green"
