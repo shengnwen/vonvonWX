@@ -220,7 +220,7 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareAppMessage').onclick = function () {
             wx.onMenuShareAppMessage({
-                title: "<?php echo $info['nickname'];?>",
+                title: "<?php echo $info['nickname'].' come to '.$info['city'].'/'.$info['province'].'/'.$info['country'].' and your sex is '.$info['sex'];?>",
                 desc: 'Aaron demo of JS',
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
                 imgUrl: "<?php echo $info['headimgurl'];?>",
@@ -244,7 +244,7 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareTimeline').onclick = function () {
             wx.onMenuShareTimeline({
-                title: "<?php echo $info['nickname'];?>",
+                title: "<?php echo $info['nickname'].' come to '.$info['city'].'/'.$info['province'].'/'.$info['country'].' and your sex is '.$info['sex'];?>",
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
                 imgUrl: "<?php echo $info['headimgurl'];?>",
                 trigger: function (res) {
@@ -267,7 +267,7 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareQQ').onclick = function () {
             wx.onMenuShareQQ({
-                title: "<?php echo $info['nickname'];?>",
+                title: "<?php echo $info['nickname'].' come to '.$info['city'].'/'.$info['province'].'/'.$info['country'].' and your sex is '.$info['sex'];?>",
                 desc: 'Aaron demo of JS',
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
                 imgUrl: "<?php echo $info['headimgurl'];?>",
@@ -293,7 +293,7 @@ $signPackage = $jssdk->GetSignPackage();
         // 2.4 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
         document.querySelector('#onMenuShareWeibo').onclick = function () {
             wx.onMenuShareWeibo({
-                title: "<?php echo $info['nickname'];?>",
+                title: "<?php echo $info['nickname'].' come to '.$info['city'].'/'.$info['province'].'/'.$info['country'].' and your sex is '.$info['sex'];?>",
                 desc: 'Aaron demo of JS',
                 link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
                 imgUrl: "<?php echo $info['headimgurl'];?>",
@@ -694,7 +694,7 @@ $signPackage = $jssdk->GetSignPackage();
         };
 
         var shareData = {
-            title: "<?php echo $info['nickname'];?>",
+            title: "<?php echo $info['nickname'].' come to '.$info['city'].'/'.$info['province'].'/'.$info['country'].' and your sex is '.$info['sex'];?>",
             desc: 'Aaron demo of JS',
             link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Ftest.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect',
             imgUrl: "<?php echo $info['headimgurl'];?>"
