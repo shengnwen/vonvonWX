@@ -33,7 +33,7 @@ $signPackage = $jssdk->GetSignPackage();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Aaron's demo</title>
 </head>
 <body>
 <?php
@@ -63,9 +63,11 @@ echo "<img src='".$info['headimgurl']."'>";
             imgUrl: <?php echo $info['headimgurl'];?>, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
+                alert('已分享');
             },
             cancel: function () {
                 // 用户取消分享后执行的回调函数
+                alert('已取消');
             }
         });
     });
