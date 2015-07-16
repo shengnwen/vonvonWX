@@ -363,7 +363,7 @@ $signPackage = $jssdk->GetSignPackage();
     <img src="img/share.png" class="share" >
 
 </div>
-<div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,我们是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
+<div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
 <input type=text id="txt_serverID" style="display:none" />
 </body>
 </html>
