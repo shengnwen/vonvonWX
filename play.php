@@ -225,7 +225,14 @@
             return decodeURI(r[2]);
         return '';
     }
-  wx.config({debug:false,appId: 'wx519f23f4a45e8c37',timestamp: 10000,nonceStr: 'GD0LAMF6h92PuB0z',signature: '15197f1efbaa532972ef9fd61364e0a689b44a5a',jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "stopVoice", "onVoicePlayEnd", "uploadVoice", "downloadVoice"]});
+    wx.config({
+        debug: false,
+        appId: '<?php echo $signPackage["appId"];?>',
+        timestamp: <?php echo $signPackage["timestamp"];?>,
+        nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+        signature: '<?php echo $signPackage["signature"];?>',
+        jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "stopVoice", "onVoicePlayEnd", "uploadVoice", "downloadVoice"]
+    });
 
             wx.ready(function (res) {
                 downloadVoice(voiceId);
@@ -324,7 +331,7 @@ function playVoiceByUser() {
     <a class="green"
        href="http://www.pxegt.com/yuyin3/ly.php">我也要发语音</a>
 
-    <div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,我们是社交媒体上最具爆点的测试和娱乐资讯的制造者</i></span><span class="addbutton">关注</span></a></div>
+    <div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,我们是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
 </div>
 </body>
 </html>

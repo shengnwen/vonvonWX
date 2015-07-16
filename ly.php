@@ -1,4 +1,8 @@
-
+<?php
+require_once "js/jssdk.php";
+$jssdk = new JSSDK("wx519f23f4a45e8c37", "ea8f0b17b3a0882bf5fda7ed27758482");
+$signPackage = $jssdk->GetSignPackage();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -263,7 +267,14 @@
 <script type="text/javascript">
     var wxShareDataArray = ["朋友圈也能发语音了！", "http://139.129.117.49/vonvonWX/img/yy.jpg", "10\"", ""];
 
-    wx.config({debug:false,appId: 'wx519f23f4a45e8c37',timestamp: 10000,nonceStr: 'GD0LAMF6h92PuB0z',signature: '15197f1efbaa532972ef9fd61364e0a689b44a5a',jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "stopVoice", "onVoicePlayEnd", "uploadVoice", "downloadVoice"]});
+    wx.config({
+        debug: false,
+        appId: '<?php echo $signPackage["appId"];?>',
+        timestamp: <?php echo $signPackage["timestamp"];?>,
+        nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+        signature: '<?php echo $signPackage["signature"];?>',
+        jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice", "pauseVoice", "stopVoice", "onVoicePlayEnd", "uploadVoice", "downloadVoice"]
+    });
 	wx.ready(function () {
            changeWeixinShareData();
     });
@@ -327,7 +338,7 @@
     <img src="img/share.png" class="share" >
 
 </div>
-<div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,我们是社交媒体上最具爆点的测试和娱乐资讯的制造者</i></span><span class="addbutton">关注</span></a></div>
+<div class="tuiguang"><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAwNw==&mid=209230536&idx=1&sn=55aa78162626539328dd2ab9dfa0a96d#rd"><img src="http://img01.sogoucdn.com/app/a/100520090/oIWsFt970so3iyYPrge0G73H-owI"><span class="wxname">VonVon测试<i>新兴于韩国,我们是社交媒体上最具爆点的测试制造者</i></span><span class="addbutton">关注</span></a></div>
 <input type=text id="txt_serverID" style="display:none" />
 </body>
 </html>
