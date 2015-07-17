@@ -28,7 +28,7 @@ switch($type) {
             $name = substr($content,6);
             $res = array(
                 "0"=>array(
-                    'Title'=>$name.', welcome to VonVon!',
+                    'Title'=>$name.', 你的生辰八字',
                     'Description'=>'Vonvon作为国际化的SNS社交媒体，从2015年1月起，在全世界已经拥有1亿以上的 用户。现在已在韩国，中国，台湾，泰国，越南，印尼，美国，巴西，西班牙等国家 开放。将来会拓展到更多的国家，并且会创作更多有趣的主题测试。',
                     'PicUrl'=>'http://cdn-cn-static-dr.vonvon.net/images/cn/recruit_main.jpg',
                     'Url'=>'http://cn.vonvon.net/'
