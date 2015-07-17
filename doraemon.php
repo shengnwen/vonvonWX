@@ -273,7 +273,7 @@ $signPackage = $jssdk->GetSignPackage();
      });*/
    });
    show.bind("click", function() {
-     location.href = "/huodong/doraemon/my-prop";
+     location.href = "#";
    });
    give.bind("click", function() {
      give.hide();
