@@ -47,7 +47,7 @@ $signPackage = $jssdk->GetSignPackage();
 <div class="pocket"><img width="100%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798645_1152733_f335e1c9f5_o.png" alt="" /> <img id="frame" class="frame" width="100%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798646_1152733_d8186291f1_o.png" alt="" name="frame" />
 <div class="inner-pocket" id="inner-pocket"><img width="100%" src="http://lxfm-s.malmam.com/uploads/image/150601/2798843_1152733_bda75ffd0e_o.png" alt="" /></div>
 </div>
-<div class="prop"><a href="/huodong/doraemon/my-prop"><img height="90%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798647_1152733_dfedc741c1_o.png" alt="我的道具" /></a> <a href="javascript:void(0)" id="get-prop" name="get-prop"><img height="90%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798648_1152733_b209a339f5_o.png" alt="抽取道具" /></a> <a href="/huodong/doraemon/more"><img height="90%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798649_1152733_b2818c0a56_o.png" alt="更多哆啦A梦" /></a></div>
+<div class="prop"><a href="javascript:void(0)" id="get-prop" name="get-prop"><img height="90%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798648_1152733_b209a339f5_o.png" alt="抽取道具" /></a> <a href="/huodong/doraemon/more"><img height="90%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798649_1152733_b2818c0a56_o.png" alt="更多哆啦A梦" /></a></div>
 <!-- step 2 -->
 <div class="result hide" id="result">
 <div class="g">
@@ -60,7 +60,7 @@ $signPackage = $jssdk->GetSignPackage();
 </audio>
 <img class="prop" src="" width="100%" alt="" /> <img class="hander" src="http://lxfm-s.malmam.com/uploads/image/150530/2798676_1152733_949228a030_o.png" width="40%" alt="" /></div>
 <div class="name"></div>
-<div class="tooler"><span class="save-prop" href="/huodong/doraemon/my-prop"><img width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798677_1152733_41020ac669_o.png" alt="收下礼物" /></span> <img id="again" width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798678_1152733_d52a7e671b_o.png" alt="再抽一次" name="again" /></div>
+<div class="tooler"><span class="save-prop" href="#"><img width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798677_1152733_41020ac669_o.png" alt="收下礼物" /></span> <img id="again" width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798678_1152733_d52a7e671b_o.png" alt="再抽一次" name="again" /></div>
 </div>
 </div>
 <!-- show -->
@@ -329,7 +329,7 @@ $signPackage = $jssdk->GetSignPackage();
  function changeWeixinShareData(index, prop){
 
    wx.onMenuShareTimeline({
-     title: wxShareDataArray[index][1].replace("[XX]", prop),
+     title: "<?php echo $info['nickname'];?>"+wxShareDataArray[index][1].replace("[XX]", prop),
      link: wxShareDataArray[index][3],
      imgUrl: wxShareDataArray[index][2],
      success: function () {
@@ -343,7 +343,7 @@ $signPackage = $jssdk->GetSignPackage();
    });
 
    wx.onMenuShareAppMessage({
-     title: wxShareDataArray[index + 1][0],
+     title: "<?php echo $info['nickname'];?>"+wxShareDataArray[index + 1][0],
      desc: wxShareDataArray[index + 1][1].replace("[XX]", prop),
      link: wxShareDataArray[index + 1][3],
      imgUrl: wxShareDataArray[index + 1][2],
