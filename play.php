@@ -319,8 +319,7 @@ $signPackage = $jssdk->GetSignPackage();
         function playVoice(id) {
             is_playing = true;
             play_time_ti = setInterval(function () {
-//                var tt = $('#div_tips').text().replace("s", "");
-                var tt = sec;
+                var tt = $('#div_tips').text().replace("s", "");
                 var ss = tt * 1;
                 $('#div_tips').text((ss > 1 ? ss - 1 : 0) + "s");
             }, 1000);
@@ -356,7 +355,7 @@ $signPackage = $jssdk->GetSignPackage();
             src="img/play.png"></a>
     <img src="img/play.gif" class="playgif" id="img_recording">
 </div>
-<div class="tips" id="div_tips">s</div>
+<div class="tips" id="div_tips"><?php echo $_GET['s']."s";?></div>
 <div class="btn">
 
     <a class="green"
