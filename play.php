@@ -319,7 +319,8 @@ $signPackage = $jssdk->GetSignPackage();
         function playVoice(id) {
             is_playing = true;
             play_time_ti = setInterval(function () {
-                var tt = $('#div_tips').text().replace("s", "");
+//                var tt = $('#div_tips').text().replace("s", "");
+                var tt = sec;
                 var ss = tt * 1;
                 $('#div_tips').text((ss > 1 ? ss - 1 : 0) + "s");
             }, 1000);
