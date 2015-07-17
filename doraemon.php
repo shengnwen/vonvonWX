@@ -47,7 +47,7 @@ $signPackage = $jssdk->GetSignPackage();
 <div class="pocket"><img width="100%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798645_1152733_f335e1c9f5_o.png" alt="" /> <img id="frame" class="frame" width="100%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798646_1152733_d8186291f1_o.png" alt="" name="frame" />
 <div class="inner-pocket" id="inner-pocket"><img width="100%" src="http://lxfm-s.malmam.com/uploads/image/150601/2798843_1152733_bda75ffd0e_o.png" alt="" /></div>
 </div>
-<div class="prop"><a href="javascript:void(0)" id="get-prop" name="get-prop"><img height="90%" src="<?php echo $info['headimgurl'];?>" alt="抽取道具" /></a> <a href="doraemon.php"><img height="90%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798649_1152733_b2818c0a56_o.png" alt="更多哆啦A梦" /></a></div>
+<div class="prop"><a href="javascript:void(0)" id="get-prop" name="get-prop"><img height="90%" src="<?php echo $info['headimgurl'];?>" alt="抽取道具" /></a> <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fdoraemon.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect"><img height="90%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798649_1152733_b2818c0a56_o.png" alt="点击你的头像" /></a></div>
 <!-- step 2 -->
 <div class="result hide" id="result">
 <div class="g">
@@ -60,7 +60,7 @@ $signPackage = $jssdk->GetSignPackage();
 </audio>
 <img class="prop" src="" width="100%" alt="" /> <img class="hander" src="http://lxfm-s.malmam.com/uploads/image/150530/2798676_1152733_949228a030_o.png" width="40%" alt="" /></div>
 <div class="name"></div>
-<div class="tooler"><span class="save-prop" href="doraemon.php"><img width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798677_1152733_41020ac669_o.png" alt="收下礼物" /></span> <img id="again" width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798678_1152733_d52a7e671b_o.png" alt="再抽一次" name="again" /></div>
+<div class="tooler"><span class="save-prop" href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fdoraemon.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect"><img width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798677_1152733_41020ac669_o.png" alt="收下礼物" /></span> <img id="again" width="30%" src="http://lxfm-s.malmam.com/uploads/image/150530/2798678_1152733_d52a7e671b_o.png" alt="再抽一次" name="again" /></div>
 </div>
 </div>
 <!-- show -->
@@ -273,7 +273,7 @@ $signPackage = $jssdk->GetSignPackage();
      });*/
    });
    show.bind("click", function() {
-     location.href = "doraemon.php";
+     location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fdoraemon.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
    });
    give.bind("click", function() {
      give.hide();
