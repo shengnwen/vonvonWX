@@ -47,7 +47,7 @@ $signPackage = $jssdk->GetSignPackage();
 <div class="pocket"><img width="100%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798645_1152733_f335e1c9f5_o.png" alt="" /> <img id="frame" class="frame" width="100%" src="http://lxfm-s.malmam.com/uploads/image/150529/2798646_1152733_d8186291f1_o.png" alt="" name="frame" />
 <div class="inner-pocket" id="inner-pocket"><img width="100%" src="http://lxfm-s.malmam.com/uploads/image/150601/2798843_1152733_bda75ffd0e_o.png" alt="" /></div>
 </div>
-<div class="prop"><p>点击头像有惊喜哦</p><a href="javascript:void(0)" id="get-prop" name="get-prop"><img height="90%" src="<?php echo $info['headimgurl'];?>" alt="点击你的头像" /></a></div>
+<div class="prop"><a href="javascript:void(0)" id="get-prop" name="get-prop"><img height="90%" src="<?php echo $info['headimgurl'];?>" alt="点击你的头像" /></a></div>
 <!-- step 2 -->
 <div class="result hide" id="result">
 <div class="g">
