@@ -330,7 +330,7 @@ $signPackage = $jssdk->GetSignPackage();
 
    wx.onMenuShareTimeline({
      title: "<?php echo $info['nickname'];?>"+wxShareDataArray[index][1].replace("[XX]", prop),
-     link: wxShareDataArray[index][3],
+     link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fdoraemon.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
      imgUrl: wxShareDataArray[index][2],
      success: function () {
        // 用户确认分享后执行的回调函数
@@ -345,7 +345,7 @@ $signPackage = $jssdk->GetSignPackage();
    wx.onMenuShareAppMessage({
      title: "<?php echo $info['nickname'];?>"+wxShareDataArray[index + 1][0],
      desc: wxShareDataArray[index + 1][1].replace("[XX]", prop),
-     link: wxShareDataArray[index + 1][3],
+     link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx519f23f4a45e8c37&redirect_uri=http%3A%2F%2F139.129.117.49%2FvonvonWX%2Fdoraemon.php&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect",
      imgUrl: wxShareDataArray[index + 1][2],
      //type: '', // 分享类型,music、video或link，不填默认为link
      //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
